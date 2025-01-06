@@ -1,0 +1,171 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1; /* Lighter background for a clean look */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #1abc9c; /* Bright teal color */
+    color: #fff;
+    padding: 40px 0; /* Increased padding for better spacing */
+    text-align: center;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3em; /* Larger title for more impact */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Make title uppercase for emphasis */
+}
+
+header p {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 50px;
+    margin-bottom: 30px;
+    border-radius: 12px; /* Round corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Add depth */
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.welcome-section h2 {
+    color: #e74c3c; /* Vibrant red color for headings */
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.welcome-section p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Navigation Menu */
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.navigation li {
+    margin: 0 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #2c3e50; /* Dark grey for the text */
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s ease-out;
+    cursor: pointer;
+}
+
+.navigation a:hover {
+    color: #f39c12; /* Golden color on hover */
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f39c12; /* Bright golden yellow */
+    padding: 50px;
+    border-radius: 12px;
+    clear: both;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.contact p {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* Floating Blocks */
+.floating-block {
+    float: left;
+    width: 30%;
+    margin: 0 20px 30px 0;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px; /* Round the corners for a softer look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.floating-block:hover {
+    transform: translateY(-15px); /* Lift the block up more on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.floating-block h3 {
+    color: #e74c3c; /* Use red for titles within the blocks */
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.floating-block p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Clearfix for Floating Elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer Section */
+footer {
+    background-color: #1abc9c; /* Teal to match the header */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .floating-block {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+    }
+
+    .navigation li {
+        margin-bottom: 10px;
+    }
+}

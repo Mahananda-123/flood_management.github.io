@@ -1,0 +1,29 @@
+/* Define light theme variables */
+:root {
+    --background-color-light: #fff;
+    --text-color-light: #000;
+    --primary-color-light: #007bff;
+}
+
+/* Define dark theme variables */
+[data-theme='dark'] {
+    --background-color-light: #333;
+    --text-color-light: #fff;
+    --primary-color-light: #ff6347;
+}
+
+/* Apply theme to the body */
+body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+/* Example navigation bar styling */
+.navigation a {
+    color: var(--primary-color-light);
+}
+
+/* Additional styling for theme-aware elements */
+.floating-block {
+    background-color: var(--background-color-light);
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 10px;
+            background: #727472;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(48, 47, 47, 0.1);
+        }
+
+        /* Heading animations */
+        h2 {
+            cursor: pointer;
+            color: rgb(46, 45, 45);
+            transition: color 0.3s ease;
+        }
+
+        h2:hover {
+            color: hsl(0, 0%, 3%);
+        }
+
+        /* Content visibility and color-changing animation */
+        .content {
+            display: none;
+            opacity: 0;
+            animation: fadeInColor 1s ease forwards;
+        }
+
+        @keyframes fadeInColor {
+            0% {
+                opacity: 0;
+                background-color: #f4f4f4;
+            }
+            25% {
+                opacity: 0.25;
+                background-color: #c28383;
+            }
+            50% {
+                opacity: 0.5;
+                background-color: #c5bd74;
+            }
+            75% {
+                opacity: 0.75;
+                background-color: #8cb88c;
+            }
+            100% {
+                opacity: 1;
+                background-color: #e4c3c3;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image styling */
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: hsl(204, 100%, 25%);">Course Learning Reflections: Design and Analysis of Algorithms</h1>
+    </header>
+
+    <section class="introduction">
+        <p>This document contains my reflections and insights from the <strong>Design and Analysis of Algorithms</strong> course. It covers several key topics that I have learned throughout the course and how they relate to both theoretical and practical aspects of algorithm design and implementation. Understanding these principles is essential for solving real-world problems efficiently and effectively. <span class="emoji">💡</span></p>
+    <p>Click on blocks</p>
+    </section>
+
+    <section class="problem-nature">
+        <h2 onclick="toggleContent(this)">1. What are the Kinds of Problems We See in Nature? (Iteration, Recursion, Backtracking)</h2>
+        <div class="content">
+            <p>Problems in nature often exhibit patterns that can be categorized into iterative, recursive, and backtracking approaches. These problem-solving techniques allow us to address challenges systematically and logically:</p>
+            <ul>
+                <li><strong>Iteration</strong>: This involves repeating a specific operation multiple times, such as looping over an array to find a maximum value. Example: A for-loop summing the elements in an array. <span class="emoji">🔄</span></li>
+                <li><strong>Recursion</strong>: A problem-solving technique where a function calls itself with smaller inputs until it reaches a base case. Commonly used in scenarios like navigating hierarchical structures (e.g., directory traversal). <span class="emoji">♻️</span></li>
+                <li><strong>Backtracking</strong>: This strategy explores all possible solutions to a problem and retracts ("backtracks") when a path fails. Example: Solving puzzles like Sudoku or finding a path in a maze. <span class="emoji">🔍</span></li>
+            </ul>
+            <p>Each approach has its strengths and is chosen based on the problem structure.</p>
+         
+        </div>
+    </section>
+
+    <section class="efficiency">
+        <h2 onclick="toggleContent(this)">2. What is Space and Time Efficiency? Why are They Important? Explain the Different Classes of Problems and Orders of Growth</h2>
+        <div class="content">
+            <p>Efficiency is a key factor in algorithm design:</p>
+            <ul>
+                <li><strong>Time Efficiency</strong>: Measures how quickly an algorithm executes as the input size grows. Example: Linear search has a time complexity of O(n), while binary search is O(log n).</li>
+                <li><strong>Space Efficiency</strong>: Measures the amount of memory an algorithm uses. Example: An iterative algorithm usually requires less space compared to its recursive counterpart.</li>
+            </ul>
+            <p>Classes of problems by growth order:</p>
+            <ul>
+                <li><strong>Constant Time (O(1))</strong>: Accessing an array element by index.</li>
+                <li><strong>Logarithmic Time (O(log n))</strong>: Binary search in a sorted array.</li>
+                <li><strong>Linear Time (O(n))</strong>: Traversing an array.</li>
+                <li><strong>Quadratic Time (O(n²))</strong>: Nested loops, such as in bubble sort.</li>
+                <li><strong>Exponential Time (O(2^n))</strong>: Solving the traveling salesman problem using brute force.</li>
+            </ul>
+            <p>Understanding efficiency helps optimize algorithms for large-scale systems and datasets.</p>
+        </div>
+    </section>
+
+    <section class="design-principles">
+        <h2 onclick="toggleContent(this)">3. Takeaways from Different Design Principles from Chapter 2</h2>
+        <div class="content">
+            <p>Key design principles covered include:</p>
+            <ul>
+                <li><strong>Divide and Conquer</strong>: Splitting a problem into smaller parts, solving them independently, and combining results. Example: Merge Sort for sorting arrays efficiently.</li>
+                <li><strong>Greedy Algorithms</strong>: Selecting the best choice at each step. Example: Huffman coding for data compression.</li>
+                <li><strong>Dynamic Programming</strong>: Storing results of sub-problems to avoid redundant calculations. Example: Solving the Fibonacci sequence in linear time.</li>
+                <li><strong>Backtracking</strong>: Exploring all possibilities by building solutions incrementally. Example: N-Queens problem.</li>
+            </ul>
+            <p>Each technique addresses specific types of problems and provides tools to optimize solutions.</p>
+        </div>
+    </section>
+
+    <section class="tree-structures">
+        <h2 onclick="toggleContent(this)">4. The Hierarchical Data and How Different Tree Data Structures Solve and Optimize Over Problem Scenarios</h2>
+        <div class="content">
+            <p><strong>Tree Data Structures</strong> are hierarchical and efficient for searching, inserting, and deleting elements. Different types of trees solve problems in different ways:</p>
+            <ul>
+                
+                <li><strong>Binary Search Tree (BST)</strong>: 
+                A tree where each node has at most two children, typically referred to as the left and right children. 
+                For any given node, values in the left subtree are less than the node's value, and values in the right subtree are greater. 
+                This property makes BSTs efficient for operations like search, insert, and delete with an average time complexity of O(log n). <span class="emoji">🌳</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Binary_search_tree_example.gif" alt="Iteration vs Recursion Illustration">
+            
+                <li><strong>AVL Tree</strong>: 
+                A self-balancing binary search tree that maintains a balance factor (the height difference between the left and right subtrees of any node) 
+                of -1, 0, or 1. This balancing ensures O(log n) complexity for search, insertion, and deletion operations, making it highly efficient. 
+                AVL trees are especially useful in scenarios requiring frequent lookups. <span class="emoji">🔄</span>
+                <img src="https://adrianmejia.com/images/avl-tree-insert-remove.gif" alt="Iteration vs Recursion Illustration">
+            
+               <li><strong>2-3 Tree</strong>: 
+                A balanced search tree where each internal node has either two children and one data element or three children and two data elements. 
+                These trees are commonly used in database systems for maintaining sorted data and enabling efficient search, insert, and delete operations. 
+                They are the foundation for more complex structures like B-trees and B+ trees. <span class="emoji">📚</span>
+                <img src="data:image/jpeg;base64,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N81eqvDp+P8AS/8AaV1LNYK8F3Y1LlX1MxJ5rqKa+8VC3r3sKfMI3nLi+riDjl1h1df5wc9rJ71Qqo5vLZ18Z6/Z5Ps6Uo7q6N3iX9DYL9li530bmLNzDwIYjpAjW8Q7mtdU0gA3r3a6GhXzcvKPI8vl65a8NsFicxWve2BK9VblJG19xkJU4gNcyYNjDY7wGyvf+Dlbl35bMzU54GhVhgeQts/8d3AmcQcIoZUQ7etTvp0ZwpPh75QZHEaryaXorNZfWnUhipNYHKCBp/T5ungBLQvxD9nh/Ns/05qyKeIWDl/klH+9XntdQRolFZVAb3nfwMDPste7UMjsXNV2RSLD4ulNrIpY+tuUAE+YMruKqtmaDai2pT9n7uthsK95cNaB620Ao+LToOG4KUVJSm+VRrZO2Y72WY+tiSST5kyHxThdjWLkY7rXeo5TzLzV2173y2KCD0PUMDsHfiDqBzfFuIrZV3qpXVfWOdLB0dDy8yqCPxry/jHkT4ETtcWwsiMem1U68tjco7eE5N5VMg0V44O2qpDFrTvemsbXKhOtgDZ8CdEzoRAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERA//Z" alt="Iteration vs Recursion Illustration">
+            
+                <li><strong>Red-Black Tree</strong>: 
+                A binary search tree with an additional color property (red or black) assigned to each node. This property ensures the tree remains balanced 
+                by following specific rules, such as no two consecutive red nodes and the same black height for all paths from the root to the leaves. 
+                Red-black trees are widely used in libraries like C++ STL and Java Collections Framework. 
+                <img src="data:image/png;base64,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" alt="Iteration vs Recursion Illustration">
+            
+                <li><strong>Heap</strong>: 
+                A complete binary tree used to implement priority queues. In a max-heap, the parent node is greater than or equal to its children, 
+                while in a min-heap, the parent node is smaller than or equal to its children. Heaps are commonly used in algorithms like Dijkstra's shortest path 
+                and heapsort. <span class="emoji">🔼</span>
+                <img src="https://lh4.googleusercontent.com/kBHPiugF_QrtkliiXgvbk3dCQgn2YDcZpC69Fg1fxsCSkf94vz5Mz36CNvT54jZLk4mxjvAo63kqT4dOUtkfgkwQz-_NZJ4AUWCX36uhn3hltw-HzNvm2ERqGF66vvdrDtblIDdtXwEh4k_hUg" alt="Iteration vs Recursion Illustration">
+            
+            </div>
+    </section>
+
+    <section class="array-query">
+        <h2 onclick="toggleContent(this)">5. The Need for Array Query Algorithms and Their Implications <span class="emoji">📊</span></h2>
+        <div class="content">
+            <p>Array query algorithms are important in many real-world applications, such as:</p>
+            <ul>
+                <li><strong>Range Queries</strong>: Algorithms like <strong>Segment Trees</strong> and <strong>Fenwick Trees (Binary Indexed Trees)</strong> allow us to efficiently query ranges in arrays, useful in applications like database indexing. <span class="emoji">🔍</span></li>
+                <li><strong>Search and Update Operations</strong>: Efficient searching algorithms (like <strong>Binary Search</strong>) and update operations are crucial for databases, search engines, and real-time applications. <span class="emoji">⚡</span></li>
+            </ul>
+       
+        </div>
+    </section>
+
+    <section class="trees-vs-graphs">
+        <h2 onclick="toggleContent(this)">6. Differentiate Between Trees and Graphs and Their Traversals. The Applications of Each <span class="emoji">🌳</span></h2>
+        <div class="content">
+            <p><strong>Trees</strong>: A hierarchical structure where each node has a single parent. They are used in databases (for indexing), file systems, and parsing expressions. <span class="emoji">🔗</span></p>
+            <p><strong>Graphs</strong>: A more generalized structure where nodes can be connected to multiple other nodes. They are used in social networks, transportation systems, and web crawlers. <span class="emoji">🌐</span></p>
+            <h3>Traversals:</h3>
+            <ul>
+                <li><strong>Trees</strong>: Pre-order, In-order, Post-order. <span class="emoji">🔄</span></li>
+                <li><strong>Graphs</strong>: Depth-First Search (DFS) and Breadth-First Search (BFS). <span class="emoji">🧭</span></li>
+            </ul>
+          
+        </div>
+    </section>
+
+    <section class="sorting-searching">
+        <h2 onclick="toggleContent(this)">7. Deliberate on Sorting and Searching Algorithms, the Technique Behind Each, and How They Connect to the Real World <span class="emoji">🔍</span></h2>
+        <div class="content">
+            <p><strong>Sorting Algorithms</strong>: Algorithms like <strong>Merge Sort</strong>, <strong>Quick Sort</strong>, and <strong>Heap Sort</strong> are essential for organizing data in applications ranging from search engines to e-commerce platforms. <span class="emoji">📈</span></p>
+            <p><strong>Searching Algorithms</strong>: <strong>Binary Search</strong> and <strong>Linear Search</strong> are fundamental for retrieving information from sorted and unsorted datasets, respectively. They are used in search engines, databases, and even AI systems for decision-making. <span class="emoji">🔎</span></p>
+          
+        </div>
+    </section>
+
+    <section class="graph-algorithms">
+        <h2 onclick="toggleContent(this)">8. Discuss the Importance of Graph Algorithms with Respect to Spanning Trees and Shortest Paths <span class="emoji">🌐</span></h2>
+        <div class="content">
+            <p><strong>Spanning Trees</strong>: Algorithms like <strong>Kruskal’s</strong> and <strong>Prim’s</strong> are used to find the minimum spanning tree of a graph, useful in network design, such as designing the least-cost cable network. <span class="emoji">🔗</span></p>
+            <p><strong>Shortest Path Algorithms</strong>: <strong>Dijkstra’s</strong> and <strong>Bellman-Ford</strong> are used to find the shortest path between nodes, which is essential in applications like GPS navigation systems, network routing, and logistics. <span class="emoji">🛣️</span></p>
+   
+        </div>
+    </section>
+
+    <section class="design-techniques">
+        <h2 onclick="toggleContent(this)">9. Discuss the Different Studied Algorithm Design Techniques <span class="emoji">⚙️</span></h2>
+        <div class="content">
+            <ul>
+                <li><strong>Divide and Conquer</strong> </li>
+                <li><strong>Greedy Algorithms</strong> </li>
+                <li><strong>Dynamic Programming</strong> </li>
+                <li><strong>Backtracking</strong> </li>
+            </ul>
+            <p>Each technique has its strengths and is chosen based on the nature of the problem, data size, and required efficiency. <span class="emoji">🔧</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Page created with insights from the Design and Analysis of Algorithms course. <span class="emoji">📚</span></p>
+    </footer>
+
+    <script>
+        // Toggle the display of content when a heading is clicked
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

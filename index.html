@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Project - Design and Analysis of Algorithms</title>
+    <title>Portfolio - Design and Analysis of Algorithms</title>
     <style>
         /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7; /* Lighter background color */
-            color: #333;
-            animation: fadeIn 2s ease-in-out;
+            background-color: #f8f9fa; /* Soft neutral background */
+            color: #333333; /* Dark gray for text */
         }
 
         h1, h2, h3, p {
@@ -21,200 +20,183 @@
         }
 
         a {
-            color: #007acc; /* Lighter blue */
+            color: #6a5acd; /* Soft lavender */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #ff7043; /* Soft orange */
+            color: #ffa07a; /* Light coral */
         }
 
         /* Header Styles */
         header {
-            background-color: #5f6368; /* Lighter dark gray */
-            color: white;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Cream to peach gradient */
+            color: #ffffff;
             text-align: center;
-            padding: 30px;
-            animation: slideIn 1s ease-out;
+            padding: 50px 0;
+            border-bottom: 4px solid #f6d365; /* Soft orange accent */
         }
 
-        h1 {
-            font-size: 3rem;
-            animation: fadeInHeader 2s ease-in-out;
+        header h1 {
+            font-size: 3.2rem;
+            font-weight: bold;
+            color: #333333; /* Dark gray */
         }
 
-        p {
-            font-size: 1.2rem;
-            animation: fadeInParagraph 2.5s ease-in-out;
+        header p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #444444; /* Medium gray */
         }
 
         /* Welcome Section */
         .welcome-section {
-            padding: 30px;
-            background-color: #ffffff;
-            margin: 20px 0;
-            border-radius: 8px;
-            opacity: 0;
-            animation: slideUp 1s ease-out forwards;
-            animation-delay: 1s;
+            background: #ffffff;
+            padding: 40px;
+            margin: 20px auto;
+            border-radius: 20px;
+            max-width: 850px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 2px solid #f9c5d1; /* Light pink border */
+        }
+
+        .welcome-section h2 {
+            font-size: 2rem;
+            color: #2f4f4f; /* Dark slate gray */
+        }
+
+        .welcome-section p {
+            font-size: 1rem;
+            color: #6c757d; /* Muted gray */
         }
 
         /* Floating Blocks */
         .floating-container {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 30px;
-            opacity: 0;
-            animation: fadeInBlocks 2s ease-in-out forwards;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px auto;
+            max-width: 1200px;
         }
 
         .floating-block {
-            background-color: #f1f1f1; /* Lighter gray */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 22%;
+            background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* Lavender to light blue */
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 270px;
             text-align: center;
-            color: #333;
-            transition: background-color 0.3s ease;
-            opacity: 0;
-            animation: floatUp 1s ease-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(0, 0, 0, 0.05); /* Subtle border */
         }
 
         .floating-block:hover {
-            background-color: #ff7043; /* Soft orange */
+            transform: scale(1.08); /* Slight zoom effect */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .floating-block h3 {
+            margin-bottom: 10px;
+            color: #333333; /* Dark gray */
+        }
+
+        .floating-block p {
+            color: #555555; /* Medium gray */
         }
 
         .floating-block:nth-child(1) {
-            animation-delay: 1.5s;
-            background-color: #a3c4f3; /* Light blue */
+            background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Cream to peach gradient */
         }
 
         .floating-block:nth-child(2) {
-            animation-delay: 2s;
-            background-color: #ffccbc; /* Light coral */
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gray to light blue */
         }
 
         .floating-block:nth-child(3) {
-            animation-delay: 2.5s;
-            background-color: #b2ebf2; /* Light turquoise */
-        }
-
-        .floating-block:nth-child(4) {
-            animation-delay: 3s;
-            background-color: #fff59d; /* Light yellow */
+            background: linear-gradient(135deg, #e0c3fc, #fbc2eb); /* Lavender to soft pink */
         }
 
         /* Contact Section */
         .contact {
-            padding: 30px;
-            background-color: #ffffff;
-            margin: 20px 0;
-            border-radius: 8px;
-            opacity: 0;
-            animation: slideUp 1s ease-out forwards;
-            animation-delay: 3.5s;
+            background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* Gray-blue gradient */
+            padding: 40px;
+            margin: 20px auto;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 850px;
+            color: #2f4f4f; /* Dark slate gray */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            color: #4682b4; /* Steel blue */
+        }
+
+        .contact a {
+            font-weight: bold;
+            color: #ff7f50; /* Coral */
+        }
+
+        .contact a:hover {
+            color: #6a5acd; /* Soft lavender */
         }
 
         /* Footer */
         footer {
+            background: #333333; /* Dark gray */
+            color: #ffffff;
             text-align: center;
-            padding: 10px;
-            background-color: #5f6368; /* Lighter dark gray */
-            color: white;
+            padding: 20px 0;
             margin-top: 30px;
-            opacity: 0;
-            animation: fadeInFooter 2s ease-in-out forwards;
         }
 
-        /* Keyframe Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes fadeInHeader {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes fadeInParagraph {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            0% { transform: translateY(-50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInBlocks {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes floatUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInFooter {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        footer p {
+            font-size: 1rem;
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Design and Analysis of Algorithms</h1>
-            <p>Enhancing E-Commerce Logistics and Customer Experience in a Smart City</p>
-        </div>
+        <h1>Design and Analysis of Algorithms</h1>
+        <p>Discover insights into smart city solutions.</p>
     </header>
 
     <main>
         <!-- Welcome Section -->
         <section class="welcome-section">
             <h2>Welcome to My Portfolio</h2>
-            <p>Welcome to my portfolio, where I present the Design and Analysis of Algorithms course project. This project focuses on solving real-world challenges in the e-commerce logistics sector within a smart city context using various algorithms.</p>
+            <p>Explore my project work from the Design and Analysis of Algorithms course, tackling real-world problems with elegant algorithmic solutions.</p>
         </section>
 
-        <!-- Floating Blocks using Flexbox -->
+        <!-- Floating Blocks -->
         <div class="floating-container">
             <div class="floating-block">
-                <h3><a href="./About me.html">About Me</a></h3>
-                <p>Learn more about my journey and background as a computer science student.</p>
+                <h3><a href="./About Me.html">About Me</a></h3>
+                <p>Learn about my journey as a computer science enthusiast.</p>
             </div>
             <div class="floating-block">
-                <h3><a href="./Introduction to the Course.html">Course Introduction</a></h3>
-                <p>Learn about the core concepts and objectives of this course.</p>
+                <h3><a href="./Introduction.html">Course Introduction</a></h3>
+                <p>Understand the key objectives and lessons from this course.</p>
             </div>
             <div class="floating-block">
-                <h3><a href="./Course Project Introduction.html">Course Project Introduction</a></h3>
-                <p>Details of the project focusing on logistics optimization in a smart city.</p>
-            </div>
-            <div class="floating-block">
-                <h3><a href="./Course Project Reflections.html">Course Learning Reflections</a></h3>
-                <p>Reflections on what I’ve learned and how this course has shaped my skills.</p>
+                <h3><a href="./Reflections.html">Reflections</a></h3>
+                <p>See how this course has enhanced my problem-solving skills.</p>
             </div>
         </div>
 
         <!-- Contact Section -->
         <section class="contact">
-            <h2>Contact</h2>
-            <p>If you have any questions or would like to get in touch, feel free to reach out via my <a href="mailto:your-email@example.com">email</a>.</p>
+            <h2>Contact Me</h2>
+            <p>If you'd like to connect, feel free to send an <a href="mailto:your-email@example.com">email</a>.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mahananda Magadum. All Rights Reserved.</p>
+        <p>&copy; 2024 Shivaleela Pattanashetti. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

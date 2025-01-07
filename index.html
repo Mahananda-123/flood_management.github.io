@@ -3,200 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Design and Analysis of Algorithms</title>
+    <title>Creative Portfolio - Algorithms & Beyond</title>
     <style>
         /* Global Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa; /* Soft neutral background */
-            color: #333333; /* Dark gray for text */
-        }
-
-        h1, h2, h3, p {
-            margin: 0;
-            padding: 10px 0;
+            background: #fafafa; /* Neutral background */
+            color: #333; /* Dark text */
         }
 
         a {
-            color: #6a5acd; /* Soft lavender */
+            color: #ff6f61; /* Coral */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #ffa07a; /* Light coral */
+            color: #6a5acd; /* Lavender */
         }
 
-        /* Header Styles */
+        /* Header Section */
         header {
-            background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Cream to peach gradient */
-            color: #ffffff;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Gradient from pink to light peach */
+            color: white;
             text-align: center;
-            padding: 50px 0;
-            border-bottom: 4px solid #f6d365; /* Soft orange accent */
+            padding: 70px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
         header h1 {
-            font-size: 3.2rem;
-            font-weight: bold;
-            color: #333333; /* Dark gray */
+            font-size: 3.5rem;
+            margin: 0;
         }
 
         header p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            margin: 10px 0 0;
             font-weight: 300;
-            color: #444444; /* Medium gray */
         }
 
         /* Welcome Section */
         .welcome-section {
-            background: #ffffff;
-            padding: 40px;
-            margin: 20px auto;
-            border-radius: 20px;
-            max-width: 850px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
-            border: 2px solid #f9c5d1; /* Light pink border */
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 900px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: rotate(0deg);
+            transition: transform 0.4s ease;
+        }
+
+        .welcome-section:hover {
+            transform: rotate(-1deg);
         }
 
         .welcome-section h2 {
-            font-size: 2rem;
-            color: #2f4f4f; /* Dark slate gray */
+            color: #ff6f61;
         }
 
-        .welcome-section p {
-            font-size: 1rem;
-            color: #6c757d; /* Muted gray */
-        }
-
-        /* Floating Blocks */
-        .floating-container {
+        /* Floating Tiles Section */
+        .tiles-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
-            margin: 30px auto;
-            max-width: 1200px;
+            gap: 20px;
+            padding: 30px 10px;
         }
 
-        .floating-block {
-            background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* Lavender to light blue */
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            width: 270px;
+        .tile {
+            background: linear-gradient(135deg, #d4fc79, #96e6a1); /* Light green gradient */
+            width: 260px;
             text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid rgba(0, 0, 0, 0.05); /* Subtle border */
         }
 
-        .floating-block:hover {
-            transform: scale(1.08); /* Slight zoom effect */
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        .tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .floating-block h3 {
+        .tile h3 {
             margin-bottom: 10px;
-            color: #333333; /* Dark gray */
+            font-size: 1.4rem;
+            color: #333;
         }
 
-        .floating-block p {
-            color: #555555; /* Medium gray */
+        .tile p {
+            color: #555;
+            font-size: 1rem;
         }
 
-        .floating-block:nth-child(1) {
+        .tile:nth-child(1) {
             background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Cream to peach gradient */
         }
 
-        .floating-block:nth-child(2) {
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gray to light blue */
+        .tile:nth-child(2) {
+            background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* Gray-blue gradient */
         }
 
-        .floating-block:nth-child(3) {
-            background: linear-gradient(135deg, #e0c3fc, #fbc2eb); /* Lavender to soft pink */
+        .tile:nth-child(3) {
+            background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* Lavender to light blue */
         }
 
         /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* Gray-blue gradient */
-            padding: 40px;
-            margin: 20px auto;
-            border-radius: 20px;
+        .contact-section {
+            background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Soft white gradient */
             text-align: center;
-            max-width: 850px;
-            color: #2f4f4f; /* Dark slate gray */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .contact h2 {
-            color: #4682b4; /* Steel blue */
+        .contact-section h2 {
+            color: #4682b4; /* Steel Blue */
         }
 
-        .contact a {
-            font-weight: bold;
-            color: #ff7f50; /* Coral */
-        }
-
-        .contact a:hover {
-            color: #6a5acd; /* Soft lavender */
+        .contact-section p {
+            color: #6c757d; /* Muted gray */
         }
 
         /* Footer */
         footer {
-            background: #333333; /* Dark gray */
-            color: #ffffff;
+            background: #333;
+            color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
+            padding: 20px 10px;
         }
 
         footer p {
-            font-size: 1rem;
             margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Design and Analysis of Algorithms</h1>
-        <p>Discover insights into smart city solutions.</p>
+        <h1>Creative Algorithms Portfolio</h1>
+        <p>Showcasing the Art of Problem Solving</p>
     </header>
 
     <main>
         <!-- Welcome Section -->
         <section class="welcome-section">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Explore my project work from the Design and Analysis of Algorithms course, tackling real-world problems with elegant algorithmic solutions.</p>
+            <h2>Welcome</h2>
+            <p>Discover my journey through algorithmic design, where logic meets creativity. Explore the solutions I've crafted to address real-world challenges.</p>
         </section>
 
-        <!-- Floating Blocks -->
-        <div class="floating-container">
-            <div class="floating-block">
-                <h3><a href="./About Me.html">About Me</a></h3>
-                <p>Learn about my journey as a computer science enthusiast.</p>
+        <!-- Tiles Section -->
+        <section class="tiles-container">
+            <div class="tile">
+                <h3><a href="./About.html">About Me</a></h3>
+                <p>Learn more about my passion for problem-solving and technology.</p>
             </div>
-            <div class="floating-block">
-                <h3><a href="./Introduction.html">Course Introduction</a></h3>
-                <p>Understand the key objectives and lessons from this course.</p>
+            <div class="tile">
+                <h3><a href="./Projects.html">My Projects</a></h3>
+                <p>Dive into the solutions I've built, from graph algorithms to optimization models.</p>
             </div>
-            <div class="floating-block">
+            <div class="tile">
                 <h3><a href="./Reflections.html">Reflections</a></h3>
-                <p>See how this course has enhanced my problem-solving skills.</p>
+                <p>Understand how this journey has shaped my analytical thinking.</p>
             </div>
-        </div>
+        </section>
 
         <!-- Contact Section -->
-        <section class="contact">
-            <h2>Contact Me</h2>
-            <p>If you'd like to connect, feel free to send an <a href="mailto:your-email@example.com">email</a>.</p>
+        <section class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to collaborate? <a href="mailto:your.email@example.com">Email Me</a></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Shivaleela Pattanashetti. All Rights Reserved.</p>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
 </body>
 </html>

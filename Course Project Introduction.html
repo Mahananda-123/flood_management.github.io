@@ -137,6 +137,34 @@
             transform: scale(1.05);
         }
 
+        /* New Styles for Algorithm View */
+        .link-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .link-container a {
+            color: #ff7f50;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 10px;
+            display: inline-block;
+        }
+        .link-container a:hover {
+            color: #20b2aa;
+        }
+        .code-container {
+            padding: 20px;
+            background-color: #2d3e50;
+            color: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .code-container pre {
+            margin: 0;
+            font-size: 1rem;
+        }
+
     </style>
 </head>
 <body>
@@ -165,7 +193,6 @@
 
         <section>
             <h2>Modules of the System</h2>
-
             <div class="module">
                 <h3>1. Flood Prediction and Early Warning</h3>
                 <p><strong>Users:</strong> Disaster management teams, citizens.</p>
@@ -237,10 +264,46 @@
                 <a href="final.cpp" class="view-program-btn" target="_blank">View Final Program</a>
             </div>
         </section>
+
+        <!-- Algorithm Codes Section -->
+        <section>
+            <h2>View Algorithm Codes</h2>
+            <div class="link-container">
+                <a href="#" onclick="loadCode('files/Bubble sort.cpp')">Bubble Sort</a>
+                <a href="#" onclick="loadCode('files/Merge sort.cpp')">Merge Sort</a>
+                <a href="#" onclick="loadCode('files/Quick sort.cpp')">Quick Sort</a>
+                <a href="#" onclick="loadCode('files/Selection sort.cpp')">Selection Sort</a>
+                <a href="#" onclick="loadCode('files/Heap sort.cpp')">Heap Sort</a>
+                <a href="#" onclick="loadCode('files/Insertion sort.cpp')">Insertion Sort</a>
+                <a href="#" onclick="loadCode('files/Binary search.cpp')">Binary Search</a>
+                <a href="#" onclick="loadCode('files/Linear search.cpp')">Linear Search</a>
+                <a href="#" onclick="loadCode('files/Knuth-Morris-Pratt.cpp')">Knuth-Morris-Pratt (KMP)</a>
+                <a href="#" onclick="loadCode('files/RabinKarp.cpp')">Rabin-Karp</a>
+                <a href="#" onclick="loadCode('files/Dijkstra\'s Algorithm.cpp')">Dijkstra's Algorithm</a>
+            </div>
+
+            <div id="code" class="code-container">
+                <pre id="code-content">Select an algorithm to view its code.</pre>
+            </div>
+        </section>
+
     </main>
 
     <footer>
         <p>&copy; 2024 Team 9. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function loadCode(filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('code-content').textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById('code-content').textContent = 'Error loading the file: ' + error;
+                });
+        }
+    </script>
 </body>
 </html>

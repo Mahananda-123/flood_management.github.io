@@ -3,165 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahananda Magadum - Portfolio</title>
+    <title>Flood Management System</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            background-color: #f1f1f1;
-            color: #333;
             margin: 0;
             padding: 0;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
+            background-color: #f3f4f6;
+            color: #333;
         }
 
         header {
-            background-color: #555;
-            color: #fff;
+            background: linear-gradient(135deg, #005f73, #0a9396);
+            color: #ffffff;
             text-align: center;
-            padding: 20px;
-            animation: slideIn 1s ease-out;
+            padding: 30px 15px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            animation: fadeIn 2s ease-in-out;
+            margin: 0;
+            font-size: 2.8rem;
         }
 
         header p {
+            margin: 10px 0 0;
             font-size: 1.2rem;
-            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         section {
-            padding: 20px;
-            margin: 10px;
-            background-color: #e0e0e0;
-            border-radius: 8px;
-            opacity: 0;
-            animation: slideUp 0.8s ease-out forwards;
-            animation-delay: 0.5s;
+            margin-bottom: 25px;
         }
 
         h2 {
-            color: #444;
+            color: #005f73;
             font-size: 1.8rem;
-            animation: fadeIn 2s ease-in-out;
+            border-bottom: 3px solid #0a9396;
+            padding-bottom: 5px;
         }
 
         h3 {
-            color: #555;
-            font-size: 1.4rem;
+            color: #94d2bd;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        p, ul {
+            margin: 10px 0;
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
+            list-style-type: square;
+            margin: 10px 0 20px 20px;
+            color: #555;
         }
 
         ul li {
-            font-size: 1.1rem;
-            padding: 5px 0;
+            margin-bottom: 8px;
         }
 
+        .team-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #005f73;
+            color: #ffffff;
+            margin-top: 30px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Adding hover effects */
         a {
-            color: #0066cc;
+            color: #0a9396;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: hsla(24, 100%, 50%, 0.493);
-            text-decoration: underline;
+            color: #ee9b00;
         }
 
-        footer {
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            animation: fadeIn 2.5s ease-in-out;
+        /* Adding box styles for the modules */
+        .module {
+            background: #e9f5f2;
+            border: 1px solid #94d2bd;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
-        footer p {
-            font-size: 1.2rem;
-        }
-
-        /* Keyframe Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            0% { transform: translateY(-50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+        .module:hover {
+            background: #d9f0e6;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hi there! 👋</h1>
-        <p>I'm Mahananda Magadum, a Computer Science Engineering student at KLE Technological University,Belagavi. 🚀</p>
+        <h1>Flood Management System</h1>
+        <p>Ensuring public safety through innovation and technology</p>
     </header>
 
-    <section class="about-me">
-        <h2>🌟 About Me</h2>
-        <p>I’m on a mission to explore the fascinating world of technology and solve real-world problems with data structures and algorithms. From diving deep into code logic to unraveling the secrets of databases, I’m always ready to learn, grow, and contribute! 💡</p>
-        <p><strong>Name:</strong> Mahananda Magadum</p>
-        <p><strong>USN:</strong> 02fe23bcs065</p>
-        <p><strong>Instructor:</strong> Mrs.Vaishali Parab</p>
-    </section>
+    <main>
+        <section>
+            <h2>Team Information</h2>
+            <p class="team-info"><strong>Team No. 9</strong></p>
+            <p><strong>Team Members:</strong></p>
+            <ul>
+                <li>Rohit A (02FE23BCS074)</li>
+                <li>Shreya Hiremath (02FE23BCS079)</li>
+                <li>Vaibhav M. T. (02FE23BCS067)</li>
+                <li>Mahananda N. M (02FE23BCS065)</li>
+            </ul>
+        </section>
 
+        <section>
+            <h2>Problem Definition</h2>
+            <p>"Create a dynamic system that ensures public safety, minimizes property damage, and accelerates post-flood recovery."</p>
+        </section>
 
-    <section class="current-exploring">
-        <h2>🌱 What I'm Currently Exploring</h2>
-        <ul>
-            <li>Crafting innovative solutions using data structures and algorithms</li>
-            <li>Understanding the nuances of database design and optimization</li>
-            <li>Experimenting with SQL queries for effective data analysis</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Modules of the System</h2>
 
-    <section class="technologies">
-        <h2>💻 Technologies in My Toolkit</h2>
-        <h3>Programming Languages:</h3>
-        <ul>
-            <li>💻 C/C++ – My foundation for solving complex problems</li>
-        </ul>
+            <div class="module">
+                <h3>1. Flood Prediction and Early Warning</h3>
+                <p><strong>Users:</strong> Disaster management teams, citizens.</p>
+                <p><strong>Functions:</strong></p>
+                <ul>
+                    <li>Collection of meteorological, hydrological, and geographical data.</li>
+                    <li>Real-time integration of weather and water-level data.</li>
+                    <li>AI-based forecasting models using machine learning and time series analysis.</li>
+                </ul>
+                <p><strong>Algorithm:</strong> Time Series Analysis, Heap Sort.</p>
+                <p><strong>Data Structures:</strong> Strings, Vectors, Graphs, Heaps.</p>
+                <p><strong>Outcome:</strong> Early and accurate alerts to safeguard lives and mitigate damage.</p>
+            </div>
 
-        <h3>Databases:</h3>
-        <ul>
-            <li>🗂️ MySQL – For building relational models and writing efficient SQL queries</li>
-        </ul>
+            <div class="module">
+                <h3>2. Flood Evacuation Planning</h3>
+                <p><strong>Users:</strong> Authorities, local communities.</p>
+                <p><strong>Functions:</strong></p>
+                <ul>
+                    <li>Risk zone prediction to identify high-risk areas.</li>
+                    <li>Traffic flow modeling to design efficient evacuation routes.</li>
+                    <li>Dynamic evacuation planning based on real-time updates.</li>
+                </ul>
+                <p><strong>Algorithms:</strong> Knuth-Morris-Pratt, Dijkstra's, Prim's Algorithm.</p>
+                <p><strong>Data Structures:</strong> Vectors, Strings, Unordered Maps, Structures, Graphs.</p>
+                <p><strong>Outcome:</strong> Safe, efficient, and well-organized evacuations during flood emergencies.</p>
+            </div>
 
-        <h3>Development Tools:</h3>
-        <ul>
-            <li>🛠️ VS Code, Code::Blocks, Google Colab – My go-to companions for coding and debugging</li>
-        </ul>
-    </section>
+            <div class="module">
+                <h3>3. Flood Risk Mapping</h3>
+                <p><strong>Users:</strong> Planners, citizens, authorities.</p>
+                <p><strong>Functions:</strong></p>
+                <ul>
+                    <li>Identification of flood-prone areas.</li>
+                    <li>Visualization of flood depth and risk zones.</li>
+                </ul>
+                <p><strong>Algorithms:</strong> Linear Search, String Matching Algorithms.</p>
+                <p><strong>Data Structures:</strong> Vectors, Strings, Unordered Maps, 2D Arrays.</p>
+                <p><strong>Outcome:</strong> Strategic urban development and improved community awareness of risk zones.</p>
+            </div>
 
-    <section class="contact">
-        <h2>🎯 Why Connect with Me?</h2>
-        <p>I’m not just a student—I’m a curious mind who loves discussing tech, sharing ideas, and collaborating on impactful projects. Let's connect and build something amazing together! 🌟</p>
-        
-        <h2>📫 Where to Find Me</h2>
-        <ul>
-            <li>Email: <a href="mailto:mmagadum1234@gmail.com">mmagadum1234@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/mahananda-magadum-b610412a9/">linkedin.com/in/mahananda-magadum-b610412a9/</a></li>
-            <li>GitHub: <a href="https://github.com/Mahananda-123">github.com/Mahananda-123</a></li>
-        </ul>
-    </section>
+            <div class="module">
+                <h3>4. Drainage Network Optimization</h3>
+                <p><strong>Users:</strong> Engineers, municipal bodies.</p>
+                <p><strong>Functions:</strong></p>
+                <ul>
+                    <li>Real-time monitoring of drainage systems.</li>
+                    <li>Control and optimization of water flow in urban areas.</li>
+                    <li>Efficient planning of drainage system upgrades.</li>
+                </ul>
+                <p><strong>Algorithms:</strong> Flow Simulation, Graph Theory.</p>
+                <p><strong>Data Structures:</strong> Graphs, Queues, Strings, 2D Arrays.</p>
+                <p><strong>Outcome:</strong> Reduced waterlogging and more efficient water flow management.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>Thank you for stopping by my profile! Feel free to connect or drop a message—I'd love to hear from you. 😊</p>
+        <p>&copy; 2024 Team 9. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
+

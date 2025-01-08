@@ -1,46 +1,62 @@
-def rabin_karp(text, pattern, prime=101):
-    """
-    Rabin-Karp algorithm for substring search.
-    :param text: The text to search within.
-    :param pattern: The pattern to search for.
-    :param prime: A prime number used for hashing.
-    :return: List of starting indices where the pattern matches the text.
-    """
-    n = len(text)
-    m = len(pattern)
-    d = 256  # Number of characters in the input alphabet
-    h = 1    # Hash value for pattern
-    p = 0    # Hash value for text
-    t = 0    # Hash value for text window
-    result = []
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
-    # Calculate h = pow(d, m-1) % prime
-    for _ in range(m - 1):
-        h = (h * d) % prime
+vector<int> rabinKarp(const string& text, const string& pattern, int prime = 101) {
+    int n = text.size();
+    int m = pattern.size();
+    int d = 256; // Number of characters in the input alphabet
+    int p = 0;   // Hash value for pattern
+    int t = 0;   // Hash value for text window
+    int h = 1;   // The value of d^(m-1) % prime
+    vector<int> result;
 
-    # Calculate initial hash values for pattern and first text window
-    for i in range(m):
-        p = (d * p + ord(pattern[i])) % prime
-        t = (d * t + ord(text[i])) % prime
+    // Calculate h = pow(d, m-1) % prime
+    for (int i = 0; i < m - 1; i++) {
+        h = (h * d) % prime;
+    }
 
-    # Slide the pattern over the text
-    for i in range(n - m + 1):
-        # Check the hash values of the pattern and current window
-        if p == t:
-            # Check characters one by one for confirmation
-            if text[i:i + m] == pattern:
-                result.append(i)
+    // Calculate initial hash values for pattern and first window of text
+    for (int i = 0; i < m; i++) {
+        p = (d * p + pattern[i]) % prime;
+        t = (d * t + text[i]) % prime;
+    }
 
-        # Calculate hash value for next window
-        if i < n - m:
-            t = (d * (t - ord(text[i]) * h) + ord(text[i + m])) % prime
-            if t < 0:
-                t += prime
+    // Slide the pattern over the text
+    for (int i = 0; i <= n - m; i++) {
+        // Check the hash values of the current window and the pattern
+        if (p == t) {
+            // Confirm by checking characters one by one
+            if (text.substr(i, m) == pattern) {
+                result.push_back(i);
+            }
+        }
 
-    return result
+        // Calculate the hash value for the next window of text
+        if (i < n - m) {
+            t = (d * (t - text[i] * h) + text[i + m]) % prime;
 
-# Example usage
-text = "ababcababcabc"
-pattern = "abc"
-matches = rabin_karp(text, pattern)
-print("Pattern found at indices:", matches)
+            // If t becomes negative, make it positive
+            if (t < 0) {
+                t += prime;
+            }
+        }
+    }
+
+    return result;
+}
+
+int main() {
+    string text = "ababcababcabc";
+    string pattern = "abc";
+    vector<int> matches = rabinKarp(text, pattern);
+
+    cout << "Pattern found at indices: ";
+    for (int index : matches) {
+        cout << index << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
